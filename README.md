@@ -49,8 +49,8 @@ Requirements: Python 3 must be installed on your computer (for backend/dealer/se
 4. ```pip install --upgrade pip``` & ```pip install -r requirements.txt``` -- install latest packages needed to run the server
 5. ```cd src``` -- change to the sourcecodes directory 
 6. ```uvicorn main:app --reload``` -- run a simple webserver, which will update on changes 
-7. open [http://localhost:3000](http://localhost:3000) in your webbrowser --> You should see a Welcome Page.
-8. open [http://localhost:3000/docs](http://localhost:3000/docs) in your webbrowser --> You will find a Swagger documentation of the REST-API. 
+7. open [http://localhost:8000](http://localhost:8000) in your webbrowser --> You should see a Welcome Page.
+8. open [http://localhost:8000/docs](http://localhost:8000/docs) in your webbrowser --> You will find a Swagger documentation of the REST-API. 
 
 For further instructions & support visit our Codepals Meetup in Beijing online or offline :)
 
