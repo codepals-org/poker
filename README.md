@@ -2,13 +2,20 @@
 
 We build a Poker Game consisting of a Pokerserver ("Dealer") and multiple Clients ("Players"). 
 
+**How to contribute:** 
+
+1) Join our Codepals events. 
+2) Check the issues list and see where you can help
+3) Create new features for the PokerServer (and implement them after discussion)
+
+## Scope 
 What should the Server/Dealer be able to do?
 
-- [ ] shuffling cards
-- [ ] handing out chips
+- [X] shuffling cards
+- [X] handing out chips
 - [ ] keeping track of them
-- [ ] dealers sets the blinds
-- [ ] knows all the cards
+- [X] dealers sets the blinds
+- [X] knows all the cards
 - [ ] he makes the result
 - [ ] keep track of overall performance by storing the money to a database
 - [ ] who's turn is it?
@@ -23,3 +30,32 @@ What should the Client/Player be able to do?
 - [ ] bet / raise
 - [ ] fold
 - [ ] if I lose, I don't want to show my cards
+
+## Installation
+
+### Clone this repository
+
+Run this in your commandline (requires git on your computer)
+
+```git clone https://github.com/codepals-org/poker.git```
+
+### Install & Run -- Backend / Dealer / Server
+
+Requirements: Python 3 must be installed on your computer (for backend/dealer/server), you need a connection to the internet
+
+1. ```cd poker\dealer``` -- go to the dealer folder
+2. ```python3 -m venv .venv``` -- create a virtual environment for python
+3. ```source ./.venv/bin/activate``` (Mac/Linux) or ```./.venv/Scripts/activate.bat``` (Windows) -- activate the virtual environment
+4. ```pip install --upgrade pip``` & ```pip install -r requirements.txt``` -- install latest packages needed to run the server
+5. ```cd src``` -- change to the sourcecodes directory 
+6. ```uvicorn main:app --reload``` -- run a simple webserver, which will update on changes 
+7. open [http://localhost:3000](http://localhost:3000) in your webbrowser --> You should see a Welcome Page.
+8. open [http://localhost:3000/docs](http://localhost:3000/docs) in your webbrowser --> You will find a Swagger documentation of the REST-API. 
+
+For further instructions & support visit our Codepals Meetup in Beijing online or offline :)
+
+### Install & Run -- Player / Client
+
+Whereas there is exactly one Server hosting the game, there are multiple Clients that have their own character, algorithms. Just like in reallife.
+It is up to each developer to program it's own Poker Player. Therefore there is no official guideline how to install. Each developer is asked to 
+provide a installation instruction for his client in order to simulate Poker games. 

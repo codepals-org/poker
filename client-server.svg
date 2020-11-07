@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <rect x="50" y="50" width="500" height="350" style="fill: rgb(216, 216, 216); paint-order: fill; stroke: rgb(1, 1, 1); stroke-width: 3px;" id="PokerServer">
+    <title>PokerServer</title>
+  </rect>
+  <text x="324.214" y="85.807" style="white-space: pre; fill: rgb(51, 51, 51); font-family: monospace; font-size: 28px;">Poker-Server</text>
+  <rect x="50" y="450" width="120" height="100" style="fill: rgb(216, 216, 216); stroke: rgb(1, 1, 1); stroke-width: 3px;">
+    <title>Client1</title>
+  </rect>
+  <rect x="240" y="450" width="120" height="100" style="fill: rgb(216, 216, 216); stroke-width: 3px; stroke: rgb(1, 1, 1);">
+    <title>Client2</title>
+  </rect>
+  <rect x="430" y="450" width="120" height="100" style="fill: rgb(216, 216, 216); stroke-width: 3px; stroke: rgb(1, 1, 1);">
+    <title>Client3</title>
+  </rect>
+  <g transform="matrix(1, 0, 0, 1, -838.405029, -254.505005)">
+    <title>CardStack</title>
+    <path d="M 908.5 363.5 C 935.5 364.5 961.5 364.5 988.5 363.5 L 988.5 413.5 C 961.5 412.5 935.5 412.5 908.5 413.5 L 908.5 363.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 907.5 359.5 C 934.5 360.5 960.5 360.5 987.5 359.5 L 987.5 409.5 C 960.5 408.5 934.5 408.5 907.5 409.5 L 907.5 359.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 909.5 355.5 C 936.5 356.5 962.5 356.5 989.5 355.5 L 989.5 405.5 C 962.5 404.5 936.5 404.5 909.5 405.5 L 909.5 355.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 905.5 351.5 C 932.5 352.5 958.5 352.5 985.5 351.5 L 985.5 401.5 C 958.5 400.5 932.5 400.5 905.5 401.5 L 905.5 351.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 909.5 347.5 C 936.5 348.5 962.5 348.5 989.5 347.5 L 989.5 397.5 C 962.5 396.5 936.5 396.5 909.5 397.5 L 909.5 347.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 905.5 343.5 C 932.5 344.5 958.5 344.5 985.5 343.5 L 985.5 393.5 C 958.5 392.5 932.5 392.5 905.5 393.5 L 905.5 343.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 909.5 339.5 C 936.5 340.5 962.5 340.5 989.5 339.5 L 989.5 389.5 C 962.5 388.5 936.5 388.5 909.5 389.5 L 909.5 339.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 906.5 339.5 C 933.5 340.5 959.5 340.5 986.5 339.5 L 986.5 389.5 C 959.5 388.5 933.5 388.5 906.5 389.5 L 906.5 339.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 905.5 335.5 C 932.5 336.5 958.5 336.5 985.5 335.5 L 985.5 385.5 C 958.5 384.5 932.5 384.5 905.5 385.5 L 905.5 335.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 907.5 331.5 C 934.5 332.5 960.5 332.5 987.5 331.5 L 987.5 381.5 C 960.5 380.5 934.5 380.5 907.5 381.5 L 907.5 331.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 903.5 327.5 C 930.5 328.5 956.5 328.5 983.5 327.5 L 983.5 377.5 C 956.5 376.5 930.5 376.5 903.5 377.5 L 903.5 327.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 907.5 323.5 C 934.5 324.5 960.5 324.5 987.5 323.5 L 987.5 373.5 C 960.5 372.5 934.5 372.5 907.5 373.5 L 907.5 323.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 903.5 319.5 C 930.5 320.5 956.5 320.5 983.5 319.5 L 983.5 369.5 C 956.5 368.5 930.5 368.5 903.5 369.5 L 903.5 319.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 907.5 315.5 L 988.5 315.5 C 989.5 332.5 989.5 348.5 988.5 365.5 L 907.5 365.5 C 906.5 348.5 906.5 332.5 907.5 315.5 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+  </g>
+  <g>
+    <title>CommunityCards</title>
+    <path d="M 170 133.572 L 220 133.572 C 221 160.572 221 186.572 220 213.572 L 170 213.572 L 170 133.572 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3" stroke-dasharray="3,3"/>
+    <path d="M 353 134.572 L 403 134.572 L 403 214.572 L 353 214.572 L 353 134.572 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3" stroke-dasharray="3,3"/>
+    <path d="M 413 134.572 L 463 134.572 L 463 214.572 C 446 213.572 430 213.572 413 214.572 L 413 134.572 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3" stroke-dasharray="3,3"/>
+    <path d="M 231 133.572 L 281 133.572 C 282 160.572 282 186.572 281 213.572 C 264 212.572 248 212.572 231 213.572 C 232 186.572 232 160.572 231 133.572 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3" stroke-dasharray="3,3"/>
+    <path d="M 292 133.572 L 342 133.572 C 343 160.572 343 186.572 342 213.572 L 292 213.572 L 292 133.572 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3" stroke-dasharray="3,3"/>
+  </g>
+  <g>
+    <title>Player1</title>
+    <path d="M 95.339 285.122 L 145.339 285.122 C 144.339 312.122 144.339 338.122 145.339 365.122 L 95.339 365.122 C 94.339 338.122 94.339 312.122 95.339 285.122 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 150.339 285.122 L 200.339 285.122 C 199.339 312.122 199.339 338.122 200.339 365.122 L 150.339 365.122 C 149.339 338.122 149.339 312.122 150.339 285.122 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+  </g>
+  <g>
+    <title>Player2</title>
+    <path d="M 248 285.122 L 298 285.122 C 297 312.122 297 338.122 298 365.122 L 248 365.122 C 247 338.122 247 312.122 248 285.122 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 303 285.122 L 353 285.122 C 352 312.122 352 338.122 353 365.122 L 303 365.122 C 302 338.122 302 312.122 303 285.122 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+  </g>
+  <g>
+    <title>Player3</title>
+    <path d="M 403.75 285.122 L 453.75 285.122 C 452.75 312.122 452.75 338.122 453.75 365.122 L 403.75 365.122 C 402.75 338.122 402.75 312.122 403.75 285.122 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+    <path d="M 458.75 285.122 L 508.75 285.122 C 507.75 312.122 507.75 338.122 508.75 365.122 L 458.75 365.122 C 457.75 338.122 457.75 312.122 458.75 285.122 Z" stroke-linejoin="round" fill="#fff" stroke="#000" stroke-width="3"/>
+  </g>
+  <text transform="matrix(1, 0, 0, 1, 37.110596, -20.388538)" style="fill: rgb(51, 51, 51); font-family: monospace; font-size: 18px; white-space: pre;"><tspan x="38.386" y="517.281">Client </tspan><tspan x="38.386" dy="1em">​</tspan><tspan>/Player</tspan></text>
+  <text transform="matrix(1, 0, 0, 1, 224.075348, -20.388538)" style="fill: rgb(51, 51, 51); font-family: monospace; font-size: 18px; white-space: pre;"><tspan x="38.386" y="517.281">Client </tspan><tspan x="38.386" dy="1em">​</tspan><tspan>/Player</tspan></text>
+  <text transform="matrix(1, 0, 0, 1, 411.84375, -20.388538)" style="fill: rgb(51, 51, 51); font-family: monospace; font-size: 18px; white-space: pre;"><tspan x="38.386" y="517.281">Client </tspan><tspan x="38.386" dy="1em">​</tspan><tspan>/Player</tspan></text>
+</svg>
