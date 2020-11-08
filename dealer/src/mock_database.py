@@ -20,6 +20,7 @@ random.shuffle(card_stack)
 
 players['player1'] = {
     "player_name" : "Player1",
+    "player_secret" : "secret_1",
     "player_money_seat" : 500,
     "player_money_pot" : 0,
     "player_cards" : (card_stack.pop(), card_stack.pop()) 
@@ -27,6 +28,7 @@ players['player1'] = {
 
 players['player2'] = {
     "player_name" : "Player2",
+    "player_secret" : "secret_2",
     "player_money_seat" : 500,
     "player_money_pot" : 0,
     "player_cards" : (card_stack.pop(), card_stack.pop())
@@ -34,6 +36,7 @@ players['player2'] = {
 
 players['player3'] = {
     "player_name" : "Player3",
+    "player_secret" : "secret_3",
     "player_money_seat" : 500,
     "player_money_pot" : 0,
     "player_cards" : (card_stack.pop(), card_stack.pop())
