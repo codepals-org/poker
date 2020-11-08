@@ -45,7 +45,8 @@ Requirements: Python 3 must be installed on your computer (for backend/dealer/se
 
 1. ```cd poker\dealer``` -- go to the dealer folder
 2. ```python3 -m venv .venv``` -- create a virtual environment for python
-3. ```source ./.venv/bin/activate``` (Mac/Linux) or ```./.venv/Scripts/activate.bat``` (Windows) -- activate the virtual environment
+3. ```source ./.venv/bin/activate``` (Mac/Linux) or ```./.venv/Scripts/activate.ps1``` (Windows) -- activate the virtual environment
+If you are using Windows, you may get an authorization issue in Powershell, please then execute the following command ```sourceSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser``` (further details can be found in Windows Docs https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7)
 4. ```pip install --upgrade pip``` & ```pip install -r requirements.txt``` -- install latest packages needed to run the server
 5. ```cd src``` -- change to the sourcecodes directory 
 6. ```uvicorn main:app --reload``` -- run a simple webserver, which will update on changes 
