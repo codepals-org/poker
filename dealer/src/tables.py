@@ -1,4 +1,4 @@
-""" The main function of this microservice - handle tables """
+""" The main function of this endpoint - handle tables """
 
 from fastapi import APIRouter, HTTPException, Response, Request, status
 import mock_database as db
