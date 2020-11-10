@@ -3,6 +3,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from tables import tables
+from players import players
 
 app = FastAPI()
 
@@ -24,3 +25,4 @@ async def root(request: Request):
         "docs_url": "http://" + request.client.host + ":" + str(request.url.port) + "/docs"}
 
 app.include_router(tables, prefix='/api/v1/tables', tags=['tables'])
+app.include_router(players, prefix='/api/v1/players', tags=['players'])

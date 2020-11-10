@@ -19,6 +19,7 @@ card_stack = [
 random.shuffle(card_stack)
 
 players['player1'] = {
+    "player_id": 'player1',
     "player_name" : "Player1",
     "player_secret" : "secret_1",
     "player_money_seat" : 500,
@@ -27,6 +28,7 @@ players['player1'] = {
 }
 
 players['player2'] = {
+    "player_id": 'player2',
     "player_name" : "Player2",
     "player_secret" : "secret_2",
     "player_money_seat" : 500,
@@ -35,6 +37,7 @@ players['player2'] = {
 }
 
 players['player3'] = {
+    "player_id": 'player3',
     "player_name" : "Player3",
     "player_secret" : "secret_3",
     "player_money_seat" : 500,

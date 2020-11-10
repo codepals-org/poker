@@ -24,6 +24,10 @@ async def show_tables():
         }
     ]}
 
+@tables.get('/results')
+async def results():
+    return {"message": "the winner is Linken"}
+
 @tables.post('/1/next_round', summary="Next Round")
 async def next_round():
     if db.phase == '':
