@@ -24,6 +24,8 @@ players['player1'] = {
     "player_secret" : "secret_1",
     "player_money_seat" : 500,
     "player_money_pot" : 0,
+    "player_role" : "dealer",
+    "player_active" : "false",
     "player_cards" : (card_stack.pop(), card_stack.pop()) 
 }
 
@@ -33,6 +35,8 @@ players['player2'] = {
     "player_secret" : "secret_2",
     "player_money_seat" : 500,
     "player_money_pot" : 0,
+    "player_role": "small_blind",
+    "player_active" : "false",
     "player_cards" : (card_stack.pop(), card_stack.pop())
 }
 
@@ -42,6 +46,8 @@ players['player3'] = {
     "player_secret" : "secret_3",
     "player_money_seat" : 500,
     "player_money_pot" : 0,
+    "player_role": "big_blind",
+    "player_active" : "false",
     "player_cards" : (card_stack.pop(), card_stack.pop())
 }
 
