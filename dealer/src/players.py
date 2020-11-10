@@ -36,6 +36,20 @@ async def show_player(player_id : str, secret :Secret):
         answer.update({"player_cards" : db.players[player_id].get('player_cards')})
     return JSONResponse(content=answer)
 
-# @players.post('/{player_id}/call')
-# async def call(player_id :str, res):
-#     return 
+@players.post('/{player_id}/call')
+async def callpot(player_id : str, secret :Secret):
+    if secret.secret != db.players[player_id].get('player_secret'):
+        pass
+    return {"message": "call"}
+
+@players.post('/{player_id}/raise')
+async def raisepot(player_id : str, secret :Secret):
+    if secret.secret != db.players[player_id].get('player_secret'):
+        pass
+    return {"message": "raise"}
+
+@players.post('/{player_id}/fold')
+async def fold(player_id : str, secret :Secret):
+    if secret.secret != db.players[player_id].get('player_secret'):
+        pass
+    return {"message": "fold"}
