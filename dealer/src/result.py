@@ -28,8 +28,12 @@ def results(full_list, public_card):
         size_all = []
 
         for card_combination in card_combinations:
+            color_current = []
             for card in card_combination:
-                color_all.append(str(card[-1]))
+                color_current.append(str(card[-1]))
+            color_all.append(color_current)
+
+            size_current = []
             for card in card_combination:
                 if card[-2].isdigit():
                     size5 = int(card[-2])
@@ -44,7 +48,8 @@ def results(full_list, public_card):
                         size5 = 13
                     elif card[-2] == "A":
                         size5 = 14
-            size_all.append(size5)
+                size_current.append(size5)
+            size_all.append(size_current)
         card_type_all = []
         type_score_all = []
         high_card_all = []
@@ -52,12 +57,12 @@ def results(full_list, public_card):
         for i, card_combination in enumerate(card_combinations):
             print("Cards: " + str(card_combination) +", " + str(i))
             color = color_all[i]
-            print("Color: " + color)
+            print("Color: " + str(color))
             size = size_all[i]
             print("Size: " + str(size))
             high_card = []
             card_type = []
-            size_set = list(set([size]))
+            size_set = list(set(size))
             while len(set(color)) == 1:
                 if max(size) - min(size) == 4:
                     card_type = 'Straight flush'
