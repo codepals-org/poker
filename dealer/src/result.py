@@ -55,11 +55,8 @@ def results(full_list, public_card):
         high_card_all = []
         win_point = []
         for i, card_combination in enumerate(card_combinations):
-            print("Cards: " + str(card_combination) +", " + str(i))
             color = color_all[i]
-            print("Color: " + str(color))
             size = size_all[i]
-            print("Size: " + str(size))
             high_card = []
             card_type = []
             size_set = list(set(size))
@@ -157,10 +154,10 @@ def results(full_list, public_card):
         high_point_rank.append(high_point)
         high_comb_rank.append(high_comb)
         high_type_rank.append(high_type)
-    winner = []
+    winner = ()
     for i in range(len(high_point_rank)):
         if high_point_rank[i] == max(high_point_rank):
-            winner.extend(str(i))
+            winner += (i,)
     for i in winner:
         a = int(i)
         b = high_type_rank[a]
