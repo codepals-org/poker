@@ -1,7 +1,13 @@
+""" This module comes with functions to decide which poker player out 
+of all players has the best cards. 
+"""
 import itertools
 # full_list in [('A','A'),('B','B')...,('F','F')]
 
 def results(full_list, public_card):
+    """ The results function takes a list of player cards and 
+    the community cards (in the middle of the table) and calculates
+    who of the players has the wining hand. """
 
     #public_card =  ['6H', '6D', '5S', '4S', '8S']
     #full_list   =  [['9C', 'AS'], ['9H', '5C'], ['4D', '2S'], ['KC', '2D'], ['9D', '10C']]
@@ -14,67 +20,44 @@ def results(full_list, public_card):
     public_card_temp.extend(list(public_card))
     total_players = len(full_list)
 
-    for i in range(total_players):
-        player_card_check = list(full_list[i])
-        print(player_card_check)
-        print(public_card)
-        # ('AD', 'JD')
-        # ('QC', 'KD', '8D', '10D', '5C')
-        player_card_check.extend(public_card)
-        comb = list(itertools.combinations(player_card_check, 5))
-        num = len(comb)
+    for player_card_check in full_list:
+        player_card_check += public_card
+        card_combinations = list(itertools.combinations(player_card_check, 5))
 
         color_all = []
         size_all = []
 
-        for x in range(num):
-            sample = comb[x]
-            color_current = []
-            for k in range(1, 6):
-                color_current.append(str(sample[k - 1][-1]))
-            color_all.append(color_current)
-            size_current = []
-            for h in range(5):
-                score = sample[h]
-                size5 = score[-2]
-                if size5 == "2":
-                    size5 = int(2)
-                elif size5 == "3":
-                    size5 = int(3)
-                elif size5 == "4":
-                    size5 = int(4)
-                elif size5 == "5":
-                    size5 = int(5)
-                elif size5 == "6":
-                    size5 = int(6)
-                elif size5 == "7":
-                    size5 = int(7)
-                elif size5 == "8":
-                    size5 = int(8)
-                elif size5 == "9":
-                    size5 = int(9)
-                elif size5 == "0":
-                    size5 = int(10)
-                elif size5 == "J":
-                    size5 = int(11)
-                elif size5 == "Q":
-                    size5 = int(12)
-                elif size5 == "K":
-                    size5 = int(13)
-                elif size5 == "A":
-                    size5 = int(14)
-                size_current.append(size5)
-            size_all.append(size_current)
+        for card_combination in card_combinations:
+            for card in card_combination:
+                color_all.append(str(card[-1]))
+            for card in card_combination:
+                if card[-2].isdigit():
+                    size5 = int(card[-2])
+                    if size5 == 0:
+                        size5 = 10
+                else:
+                    if card[-2] == "J":
+                        size5 = 11
+                    elif card[-2] == "Q":
+                        size5 = 12
+                    elif card[-2] == "K":
+                        size5 = 13
+                    elif card[-2] == "A":
+                        size5 = 14
+            size_all.append(size5)
         card_type_all = []
         type_score_all = []
         high_card_all = []
         win_point = []
-        for y in range(num):
-            color = color_all[y]
-            size = size_all[y]
+        for i, card_combination in enumerate(card_combinations):
+            print("Cards: " + str(card_combination) +", " + str(i))
+            color = color_all[i]
+            print("Color: " + color)
+            size = size_all[i]
+            print("Size: " + str(size))
             high_card = []
             card_type = []
-            size_set = list(set(size))
+            size_set = list(set([size]))
             while len(set(color)) == 1:
                 if max(size) - min(size) == 4:
                     card_type = 'Straight flush'
@@ -164,7 +147,7 @@ def results(full_list, public_card):
 
         high_point = max(win_point)
         locate = win_point.index(max(win_point))
-        high_comb = comb[locate]
+        high_comb = card_combinations[locate]
         high_type = card_type_all[locate]
         high_point_rank.append(high_point)
         high_comb_rank.append(high_comb)
