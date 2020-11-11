@@ -1,11 +1,15 @@
 import random
 
+start_budget = 500
 small_blind = 10
 big_blind = 2 * small_blind
-players = dict()
+players = []
 pot = 0
 community_cards = []
-phase = '' # 'flop', 'turn', 'river'
+phase = 0 # 0 = new round, 3 = flop, 4 = turn, 5 = river
+game_started = False
+round_started = False
+round = 0
 
 card_stack = [
     # Card Abbreviations: 
@@ -17,39 +21,6 @@ card_stack = [
 ]
 
 random.shuffle(card_stack)
-
-players['player1'] = {
-    "player_id": 'player1',
-    "player_name" : "Player1",
-    "player_secret" : "secret_1",
-    "player_money_seat" : 500,
-    "player_money_pot" : 0,
-    "player_role" : "dealer",
-    "player_active" : "false",
-    "player_cards" : (card_stack.pop(), card_stack.pop()) 
-}
-
-players['player2'] = {
-    "player_id": 'player2',
-    "player_name" : "Player2",
-    "player_secret" : "secret_2",
-    "player_money_seat" : 500,
-    "player_money_pot" : 0,
-    "player_role": "small_blind",
-    "player_active" : "false",
-    "player_cards" : (card_stack.pop(), card_stack.pop())
-}
-
-players['player3'] = {
-    "player_id": 'player3',
-    "player_name" : "Player3",
-    "player_secret" : "secret_3",
-    "player_money_seat" : 500,
-    "player_money_pot" : 0,
-    "player_role": "big_blind",
-    "player_active" : "false",
-    "player_cards" : (card_stack.pop(), card_stack.pop())
-}
 
 community_cards = (
     card_stack.pop(),
