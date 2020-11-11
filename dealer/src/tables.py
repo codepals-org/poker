@@ -2,6 +2,7 @@
 
 from fastapi import APIRouter, HTTPException, Response, Request, status
 import mock_database as db
+from result import results
 
 tables = APIRouter()
 
@@ -25,8 +26,13 @@ async def show_tables():
     ]}
 
 @tables.get('/results')
-async def results():
-    return {"message": "the winner is Linken"}
+async def who_wins():
+    player_cards = [
+        db.players['player1'].get('player_cards'),
+        db.players['player2'].get('player_cards'),
+        db.players['player3'].get('player_cards')
+        ]
+    return {"result": results(player_cards, db.community_cards)}
 
 @tables.post('/1/next_round', summary="Next Round")
 async def next_round():
