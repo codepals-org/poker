@@ -94,20 +94,20 @@ async def signup_new_player(player :PlayerSignUp):
         )
         return db.players[new_id]
 
-@players.post('/{player_id}/call')
-async def callpot(player_id : str, secret :Secret):
-    if secret.secret != db.players[player_id].get('player_secret'):
-        pass
-    return {"message": "call"}
+@players.post('/{player_id}/call', summary="Call whatever is needed.")
+async def callpot(player_id : int):
+    needed = whats_needed_to_call()
+    print("Current Money of player " + str(player_id) + ":       " +
+            str(db.players[player_id]['player_money_seat'])
+        )
+    print("Money deducted from player_id " + str(player_id) + ": " + str(needed))
+    db.players[player_id]['player_money_pot'] += needed
+    db.players[player_id]['player_money_seat'] -= needed
+    return {"message": "called " + str(needed)}
 
-@players.post('/{player_id}/raise')
-async def raisepot(player_id : str, secret :Secret):
-    if secret.secret != db.players[player_id].get('player_secret'):
-        pass
-    return {"message": "raise"}
+def whats_needed_to_call() -> float:
+    player_money_pots = []
+    for player in db.players:
+        player_money_pots.extend([player['player_money_pot']])
+    return max(player_money_pots)
 
-@players.post('/{player_id}/fold')
-async def fold(player_id : str, secret :Secret):
-    if secret.secret != db.players[player_id].get('player_secret'):
-        pass
-    return {"message": "fold"}

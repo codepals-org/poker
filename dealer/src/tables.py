@@ -49,7 +49,7 @@ async def who_wins():
         raise HTTPException(status_code=403, detail="Too early.")
     else:
         player_cards = []
-        for player in db.playersdb.players:
+        for player in db.players:
             player_cards.append(player.get('player_cards'))
         return {"result": results(player_cards, db.community_cards)}
 
@@ -99,7 +99,9 @@ def start_game() -> bool:
         bb_player['player_money_pot'] += db.big_blind
         bb_player['player_money_seat'] -= db.big_blind
         next_player['player_active'] = True
+        db.round = 1
         return True # Game started
     else:
         return False # Game already started before or not enough players
+
 
