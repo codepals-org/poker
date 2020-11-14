@@ -1,8 +1,8 @@
 """ The main function of this endpoint - handle tables """
 
 from fastapi import APIRouter, HTTPException, Response, Request, status
-import mock_database as db
-from result import results
+import dealer.helpers.mock_database as db
+from dealer.helpers.result import results
 from pydantic import BaseModel
 from typing import Optional, List, Tuple
 import random
