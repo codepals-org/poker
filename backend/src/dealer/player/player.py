@@ -1,6 +1,13 @@
 """ This module defines the player objects and all interactions
 a player client can do """
 from typing import List
+from enum import Enum
+
+class Role(Enum):
+    NORMAL = 0
+    DEALER = 1
+    SMALL = 2
+    BIG = 3
 
 class Player():
     """ The Player is a participant of the Game """
@@ -9,7 +16,7 @@ class Player():
 
         self.money_seat :float = float(0)
         self.money_pot :float = float(0)
-        self.role :str = 'normal'
+        self.role :str = Role.NORMAL
         self.active :bool = False
 
         self.hand :List[str] = []

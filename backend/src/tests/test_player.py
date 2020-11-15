@@ -1,4 +1,4 @@
-from dealer.player.player import Player
+from dealer.player.player import Player, Role
 from names import names
 
 from unittest import TestCase
@@ -19,6 +19,6 @@ class TestPlayer(TestCase):
     def test_check_player_json(self):
         for i, player in enumerate(create_test_players(3)):
             expected_result = {'id': mock.ANY, 'name': names[i],
-            'money_seat': 0, 'money_pot': 0, 'role': 'normal',
+            'money_seat': 0, 'money_pot': 0, 'role': Role.NORMAL,
             'active': False }
             assert player.json() == expected_result
