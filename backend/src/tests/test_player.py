@@ -20,5 +20,5 @@ class TestPlayer(TestCase):
         for i, player in enumerate(create_test_players(3)):
             expected_result = {'id': mock.ANY, 'name': names[i],
             'money_seat': 0, 'money_pot': 0, 'role': Role.NORMAL,
-            'active': False }
+            'active': False, 'bet_counter': 0 }
             assert player.json() == expected_result
