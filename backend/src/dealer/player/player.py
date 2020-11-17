@@ -23,6 +23,12 @@ class Player():
         self.hand :List[str] = []
         self.bet_counter = 0
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
+
     def json(self):
         return {
             "id" : id(self),
@@ -33,3 +39,9 @@ class Player():
             "active" : self.active,
             "bet_counter" : self.bet_counter, # players allowed to bet 4 times
         }
+
+    def call(self):
+        pass
+
+    def check(self):
+        pass

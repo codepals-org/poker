@@ -1,0 +1,44 @@
+@startuml
+
+Table <|--- PlayerList
+Table *- Phase
+PlayerList <|--- Player
+
+enum Phase {
+  REGISTRATION
+  PREFLOP
+  FLOP
+  TURN
+  RIVER
+  SHOWDOWN
+}
+
+class Table {
+  players :PlayerList
+  cash_per_player :float
+  small_blind :float
+  big_blind :float
+  max_players :int
+  phase :Phase
+  card_stack :List[str]
+  community_cards :List[str]
+  json()
+  signup()
+  start_game()
+  start_preflop()
+  -call()
+  -bet() 
+  -raise()
+
+}
+
+class PlayerList {
+  Object[] elementData
+  size()
+}
+
+class Player {
+  Object[] elementData
+  size()
+}
+@enduml

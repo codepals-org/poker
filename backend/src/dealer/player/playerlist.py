@@ -78,3 +78,20 @@ class PlayerList(list):
         for p in self:
             if p.role == starter_role:
                 return p
+
+    def current(self) -> Player:
+        for p in self:
+            if p.active == True: return p
+        return None
+
+    def moneypot(self) -> float:
+        pot :float = 0
+        for p in self:
+            pot += p.money_pot
+        return pot
+
+    def need_to_pay() -> float:
+        list_pot = []
+        for p in self:
+            list_pot.append(p.money_pot)
+        return max(list_pot)

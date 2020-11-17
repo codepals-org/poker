@@ -42,9 +42,10 @@ class Table():
 
         self.phase :Phase = Phase.REGISTRATION
 
-        self.card_stack :List[str] = random.shuffle(CARDS)
+        self.card_stack :List[str] = CARDS
+        random.shuffle(self.card_stack)
         self.players = PlayerList()
-        self.players_still_in :PlayerList= []
+        #self.players_still_in :PlayerList= []
         self.community_cards :List[str] = []
 
     def json(self):
@@ -72,23 +73,16 @@ class Table():
             raise RuntimeError("Game already started.")
         if len(self.players) < 2:
             raise RuntimeError("Not enough players to start the game.")
-        self.buttons_move()
+        self.players.init_buttons()
         self.players.deduct_blinds(self.small_blind, self.big_blind)
+        logging.warning(self.card_stack)
         self.players.handout_cards(self.card_stack)
         self.phase = Phase.PREFLOP
-
-    def buttons_move(self):
-        """ There is indicator ("button") for dealer, small blind, big blind 
-        which defines the order the cards are dealt, how money is bet and who
-        has to pay the small blind and big blind. This function takes care of 
-        the assignment of the indidicator which is a attribute for the player. 
-        """
-        if self.phase == Phase.REGISTRATION: # all players have role 'normal'
-            self.players.init_buttons()
-        else:
-            self.players.circular_button_move()
+        self.start_preflop()
+            
 
     def start_preflop(self):
         self.players.who_starts().active = True
 
-
+    def call(self):
+        self.players.need_to_pay()
