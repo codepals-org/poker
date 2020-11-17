@@ -2,6 +2,7 @@
 from typing import List
 from enum import Enum, auto
 from dealer.player.player import Player, Role
+from dealer.player.playerlist import PlayerList
 import random
 import logging
 
@@ -42,8 +43,8 @@ class Table():
         self.phase :Phase = Phase.REGISTRATION
 
         self.card_stack :List[str] = random.shuffle(CARDS)
-        self.players :List[Player] = []
-        self.players_still_in :List[Player] = []
+        self.players :PlayerList= []
+        self.players_still_in :PlayerList= []
         self.community_cards :List[str] = []
 
     def json(self):
@@ -90,7 +91,7 @@ class Table():
     def start_preflop(self):
         self.who_starts(self.players).active = True
 
-    def who_starts(self, players :List[Player]) -> Player:
+    def who_starts(self, players :PlayerList) -> Player:
         """ Who will start with betting """
         if len(self.players) > 3:
             starter_role = Role.UTG
@@ -126,7 +127,7 @@ class Table():
         handout_cards(self.players, self.card_stack)
 
 # Following Functions are so general, that I excluded them from the Class
-def circular_button_move(players :List[Player]) -> None:
+def circular_button_move(players :PlayerList) -> None:
     """ takes a list of players and moves there role to the player left to them
     in case we only have two players left it will remove the dealer role """
     last_role = players[-1].role
@@ -139,13 +140,13 @@ def circular_button_move(players :List[Player]) -> None:
     for position, player in enumerate(players):
         logging.warning("position: %s role: %s", position, player.role)
 
-def handout_cards(players :List[Player], cardstack :List[str]) -> None:
+def handout_cards(players :PlayerList, cardstack :List[str]) -> None:
     for player in players:
         player.hand.append(cardstack.pop())
     for player in players:
         player.hand.append(cardstack.pop())
 
-def init_buttons(players :List[Player]) -> None:
+def init_buttons(players :PlayerList) -> None:
     """ In the beginning of the game there are no buttons on each players seat.
     This function gives each player a button-role instead. """
     count = len(players)

@@ -16,4 +16,3 @@ class PreFlop(TestCase):
             table.signup(player)
         table.start_game()
         active_player = table.players[3].active
-        assert  == True
