@@ -74,8 +74,7 @@ class Table():
         self.buttons_move()
         self.deduct_blinds()
         self.handout_cards()
-
-
+        self.phase = Phase.PREFLOP
 
     def buttons_move(self):
         """ There is indicator ("button") for dealer, small blind, big blind 
@@ -84,15 +83,27 @@ class Table():
         the assignment of the indidicator which is a attribute for the player. 
         """
         if self.phase == Phase.REGISTRATION: # all players have role 'normal'
-            if len(self.players) > 2:
-                self.players[0].role = Role.DEALER
-                self.players[1].role = Role.SMALL
-                self.players[2].role = Role.BIG
-            if len(self.players) == 2:
-                self.players[0].role = Role.SMALL
-                self.players[1].role = Role.BIG
+            init_buttons(self.players)
         else:
             circular_button_move(self.players)
+
+    def start_preflop(self):
+        self.who_starts(self.players).active = True
+
+    def who_starts(self, players :List[Player]) -> Player:
+        """ Who will start with betting """
+        if len(self.players) > 3:
+            starter_role = Role.UTG
+        elif len(self.players) == 3:
+            starter_role = Role.DEALER
+        elif len(self.players) == 2:
+            starter_role = Role.SMALL
+        else:
+            raise RuntimeError(
+                "It seems like there is not enough players to start")
+        for p in self.players:
+            if p.role == starter_role:
+                return p
 
     def deduct_blinds(self):
         for player in self.players:
@@ -114,6 +125,7 @@ class Table():
     def handout_cards(self):
         handout_cards(self.players, self.card_stack)
 
+# Following Functions are so general, that I excluded them from the Class
 def circular_button_move(players :List[Player]) -> None:
     """ takes a list of players and moves there role to the player left to them
     in case we only have two players left it will remove the dealer role """
@@ -133,4 +145,18 @@ def handout_cards(players :List[Player], cardstack :List[str]) -> None:
     for player in players:
         player.hand.append(cardstack.pop())
 
-
+def init_buttons(players :List[Player]) -> None:
+    """ In the beginning of the game there are no buttons on each players seat.
+    This function gives each player a button-role instead. """
+    count = len(players)
+    if count <2:
+        raise ValueError("At least two players needed.")
+    elif count == 2:
+        players[0].role = Role.SMALL
+        players[1].role = Role.BIG
+    elif count > 2:
+        players[0].role = Role.DEALER
+        players[1].role = Role.SMALL
+        players[2].role = Role.BIG
+        if count > 3:
+            players[3].role = Role.UTG
