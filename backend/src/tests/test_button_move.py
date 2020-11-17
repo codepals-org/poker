@@ -1,5 +1,4 @@
-from dealer.player.player import Player, Role
-from dealer.player.playerlist import PlayerList
+from dealer.model.models import Player, PlayerList, Role
 from test_player import create_test_players
 
 import pytest

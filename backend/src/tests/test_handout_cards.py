@@ -1,6 +1,4 @@
-from dealer.table.table import CARDS
-from dealer.player.player import Player, Role
-from dealer.player.playerlist import PlayerList
+from dealer.model.models import PlayerList, CARDS, Player
 import logging
 
 from unittest import TestCase, mock

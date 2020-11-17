@@ -1,5 +1,4 @@
-from dealer.player.player import Player, Role
-from dealer.player.playerlist import PlayerList
+from dealer.model.models import PlayerList, Table, Player, Role
 from names import names
 
 from unittest import TestCase
