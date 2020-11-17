@@ -6,8 +6,8 @@ from unittest import TestCase
 import unittest.mock as mock
 from typing import List
 
-def create_test_players(howmany : int = 8):
-    players :PlayerList = []
+def create_test_players(howmany : int = 8) -> PlayerList:
+    players = PlayerList()
     for i in range(0,howmany):
         players.append(Player(names[i]))
     return players

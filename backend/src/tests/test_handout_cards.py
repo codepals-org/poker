@@ -1,4 +1,4 @@
-from dealer.table.table import handout_cards, CARDS
+from dealer.table.table import CARDS
 from dealer.player.player import Player, Role
 import logging
 
@@ -10,7 +10,7 @@ class TestingHandout(TestCase):
         numplayers = 8
         players = create_test_players(numplayers)
         cardstack = CARDS
-        handout_cards(players, cardstack)
+        players.handout_cards(cardstack)
         for player in players:
             logging.warning(player.hand)
             assert player.hand == [mock.ANY, mock.ANY]
