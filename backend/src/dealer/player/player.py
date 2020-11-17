@@ -31,5 +31,5 @@ class Player():
             "money_pot" : self.money_pot,
             "role" : self.role,
             "active" : self.active,
-            "bet_counter" : self.bet_counter,
+            "bet_counter" : self.bet_counter, # players allowed to bet 4 times
         }
