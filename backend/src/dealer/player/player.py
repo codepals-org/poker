@@ -8,6 +8,7 @@ class Role(Enum):
     DEALER = 1
     SMALL = 2
     BIG = 3
+    UTG = 4
 
 class Player():
     """ The Player is a participant of the Game """
@@ -20,6 +21,7 @@ class Player():
         self.active :bool = False
 
         self.hand :List[str] = []
+        self.bet_counter = 0
 
     def json(self):
         return {
@@ -28,5 +30,6 @@ class Player():
             "money_seat": self.money_seat,
             "money_pot" : self.money_pot,
             "role" : self.role,
-            "active" : self.active
+            "active" : self.active,
+            "bet_counter" : self.bet_counter,
         }
