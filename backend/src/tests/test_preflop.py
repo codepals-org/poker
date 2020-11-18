@@ -1,4 +1,5 @@
-from dealer.model.models import Table, Player
+from dealer.model.table import Table
+from dealer.model.player import Player
 import pytest
 
 from unittest import TestCase

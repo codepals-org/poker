@@ -1,4 +1,5 @@
-from dealer.model.models import PlayerList, CARDS, Player
+from dealer.model.player import PlayerList, Player
+from dealer.model.table import CARDS
 import logging
 
 from unittest import TestCase, mock
