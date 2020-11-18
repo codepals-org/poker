@@ -1,0 +1,71 @@
+@startuml
+
+Table <|--- PlayerList
+Table *- Phase
+PlayerList <|--- Player
+Player *- Role
+
+enum Phase {
+  REGISTRATION
+  PREFLOP
+  FLOP
+  TURN
+  RIVER
+  SHOWDOWN
+}
+
+class Table {
+  players :PlayerList
+  cash_per_player :float
+  small_blind :float
+  big_blind :float
+  max_players :int
+  phase :Phase
+  card_stack :List[str]
+  community_cards :List[str]
+  json()
+  signup()
+  start_game()
+  start_preflop()
+}
+
+class PlayerList {
+  self :List[Player]
+  table :Table
+  
+  init_buttons()
+  circular_button_move()
+  deduct_blinds()
+  who_starts() -> Player
+  active_player() -> Player
+  current() -> Player
+  handout_cards(cardstack)
+  money_pot() -> float
+  need_to_pay() -> float
+}
+
+class Player {
+  name :str
+  money_seat :float
+  money_pot :float
+  role :Role
+  active :bool
+
+  hand :List[str]
+  bet_counter :int
+
+  json()
+  check()
+  call()
+  bet() 
+  raise()
+}
+
+enum Role {
+  NORMAL
+  DEALER
+  SMALL
+  BIG
+  UTG
+}
+@enduml

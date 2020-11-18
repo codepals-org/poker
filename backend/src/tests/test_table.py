@@ -1,5 +1,5 @@
-from dealer.table.table import Table, Phase
-from dealer.player.player import Player
+from dealer.model.table import Table, Phase
+from dealer.model.player import Player, PlayerList
 import pytest
 
 from unittest import TestCase
