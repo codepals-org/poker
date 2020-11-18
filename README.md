@@ -43,7 +43,7 @@ Run this in your commandline (requires git on your computer)
 
 Requirements: Python 3 must be installed on your computer (for backend/dealer/server), you need a connection to the internet
 
-1. ```cd poker\dealer``` -- go to the dealer folder
+1. ```cd poker\backend``` -- go to the backend folder
 2. ```python3 -m venv .venv``` -- create a virtual environment for python
 3. ```source ./.venv/bin/activate``` (Mac/Linux) or ```./.venv/Scripts/activate.ps1``` (Windows) -- activate the virtual environment
     
