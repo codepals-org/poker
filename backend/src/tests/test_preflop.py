@@ -10,7 +10,7 @@ from typing import List
 class PreFlop(TestCase):
     def test_preflop_after_init_4(self) -> Table:
         table = Table() #500 each
-        howmany = 8
+        howmany = 4
         players = create_test_players(howmany)
         for player in players:
             table.signup(player)
@@ -30,5 +30,5 @@ class PreFlop(TestCase):
         #     table.players[0].money_pot == 
         #     table.players[1].money_pot ==
         #     table.players[2].money_pot ==
-        #     table.players[3].money_pot
+        #     table.players[3].money_pot == 20
         #     )
