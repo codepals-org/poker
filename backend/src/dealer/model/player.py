@@ -2,6 +2,7 @@ from typing import List, TYPE_CHECKING
 from enum import Enum, auto
 from typing import List
 import logging
+import collections.abc
 
 if TYPE_CHECKING:
     from .table import Table
@@ -50,22 +51,40 @@ class Player():
     def check(self):
         pass
 
-class PlayerList(list):
-    def __init__(self, table :'Table' = None):
-        super()
+class PlayerList(collections.abc.MutableSequence):
+    def __init__(self, table :'Table', *args):
         self.table = table
-    
+        self.list = list()
+        self.extend(list(args))
+
+    def check(self, v):
+        if not isinstance(v, Player):
+            raise TypeError('item is not of type %s' % Player)
+
+    def __len__(self): return len(self.list)
+
+    def __getitem__(self, i): return self.list[i]
+
+    def __delitem__(self, i): del self.list[i]
+
+    def __setitem__(self, i, v):
+        self.check(v)
+        self.list[i] = v
+        self.list[i].parent = self
+
+    def insert(self, i, v):
+        self.check(v)
+        self.list.insert(i, v)
+        self.list[i].parent = self
+
+    def __str__(self):
+        return str(self.list)
+        
     def active_player(self) -> Player:
         for player in self:
             if player.active == True:
                 return player
         return None
-    
-    def append(self, item):
-        if not isinstance(item, Player):
-            raise TypeError('item is not of type %s' % Player)
-        super().append(item)
-        item.parent = self
 
     def circular_button_move(self) -> None:
         """ moves the each role to the player sitting on the left in case we 
