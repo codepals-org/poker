@@ -22,6 +22,7 @@ class Player():
         self.money_pot :float = float(0)
         self.role :str = Role.NORMAL
         self.active :bool = False
+        self.parent :PlayerList = None
 
         self.hand :List[str] = []
         self.bet_counter = 0
@@ -53,12 +54,18 @@ class PlayerList(list):
     def __init__(self, table :'Table' = None):
         super()
         self.table = table
-
+    
     def active_player(self) -> Player:
         for player in self:
             if player.active == True:
                 return player
         return None
+    
+    def append(self, item):
+        if not isinstance(item, Player):
+            raise TypeError('item is not of type %s' % Player)
+        super().append(item)
+        item.parent = self
 
     def circular_button_move(self) -> None:
         """ moves the each role to the player sitting on the left in case we 
